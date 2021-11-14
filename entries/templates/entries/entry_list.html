@@ -1,0 +1,16 @@
+{% extends "entries/base.html" %}
+
+{% block content %}
+<article>
+    <a href="{% url 'entry-create' %}"><button>Enter new recipe</button></a>
+</article>
+    {% for entry in entry_list %}
+        <article>
+            <h3>
+                <a href="{% url 'entry-detail' entry.id %}">
+                    {{ entry.title }}
+                </a>
+            </h3>
+        </article>
+    {% endfor %}
+{% endblock %}

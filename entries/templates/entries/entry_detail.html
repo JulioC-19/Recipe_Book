@@ -1,0 +1,15 @@
+{% extends "entries/base.html" %}
+
+{% block content %}
+<article>
+    
+    <h3>{{ entry.title }}</h3>
+    <h3>{{ entry.prep_time }}</h3>
+    <h3>{{ entry.cook_time }}</h3>
+    <h3>{{ entry.servers }}</h3>
+    <p>{{ entry.ingredients }}</p>
+    <p>{{ entry.instructions }}</p>
+    <a href="{% url 'entry-update' entry.id %}">🖊️ Edit</a>
+    <a href="{% url 'entry-delete' entry.id %}">❌ Delete</a>
+</article>
+{% endblock %}
